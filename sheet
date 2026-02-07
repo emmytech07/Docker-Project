@@ -35,3 +35,9 @@ Cypress aliases store resolved subjects and must be accessed using cy.get('@alia
 https://rahulshettyacademy.com/seleniumPractise/
 https://rahulshettyacademy.com/AutomationPractice/
 https://rahulshettyacademy.com/loginpagePractise/
+
+
+
+git rm --cached .DS_Store
+git commit -m "Remove macOS system file .DS_Store from repo"
+git push origin main
