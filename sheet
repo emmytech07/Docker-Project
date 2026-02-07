@@ -41,3 +41,5 @@ https://rahulshettyacademy.com/loginpagePractise/
 git rm --cached .DS_Store
 git commit -m "Remove macOS system file .DS_Store from repo"
 git push origin main
+git push origin main --force
+git pull origin main 
