@@ -1,0 +1,15 @@
+{
+  "name": "cypress-e2e-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:smoke": "cypress run --spec cypressAutomation/cypress/e2e/examples/Test1.js",
+     "test": "npm run cypress:run"
+  },
+  "devDependencies": {
+    "cypress": "^15.9.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1"
+  }
+}
