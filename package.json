@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "Cypress E2E tests with Docker and GitHub Actions",
   "scripts": {
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:smoke": "cypress run --spec cypressAutomation/cypress/e2e/examples/Test1.cy.js",
-    "test": "npm run cypress:run"
+   "test": "cypress run"
   },
   "devDependencies": {
     "cypress": "^15.9.0",

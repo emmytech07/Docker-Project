@@ -1,24 +1,22 @@
-name: Cypress Tests (Docker)
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+name: Cypress Docker CI
+on: [push]
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source code
+      # Step 1: MUST check out the code so the runner sees your Dockerfile
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build -t cypress-tests .
+      # Step 2: Build the image from your local Dockerfile
+      - name: Build Cypress Image
+        run: docker build -t my-cypress-app .
 
-      - name: Run Cypress tests in Docker
-        run: docker run --rm cypress-tests
-
-    
+      # Step 3: Run the tests inside that built image
+      - name: Run Cypress Tests
+        run: |
+          docker run --rm \
+          -v ${{ github.workspace }}:/e2e \
+          -w /e2e \
+          my-cypress-app
